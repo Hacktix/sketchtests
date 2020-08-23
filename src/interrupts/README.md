@@ -12,6 +12,12 @@ The RAM section `$C000 - $C004` is initialized with the value `$68`, which is no
 
 The test can also be run without a PPU implementation due to a blargg-like "debug output" system. ASCII bytes are written to the SB register (`$FF01`) and can be output on the console. Initially, the ROM also waits for the LY register to reach the VBlank section, however, this does not need to be implemented either, as it times out if VBlank isn't detected in time.
 
+### Requirements:
+
+- Basic CPU Functionality (including `SWAP`, `ADC` and `LD HL, SP+i8`)
+- Interrupt Handling
+- IF + IE registers
+
 ### Verified on:
 
 - ✔ Gameboy Pocket (MGB 9638 D)
