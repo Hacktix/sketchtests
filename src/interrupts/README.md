@@ -2,9 +2,9 @@
 
 ## Table of Contents
 
-- [`interrupt_priority`](#-interrupt-priority-)
+- [interrupt_priority](#interrupt-priority)
 
-## `interrupt_priority`
+## interrupt_priority
 
 The interrupt_priority test checks the order in which interrupts are serviced by initially writing $FF to both IE and IF registers, then writing the order in which the interrupts are serviced to RAM. Afterwards, the order is checked and errors, if any, are output. If there are no errors, the text "Test OK!" appears.
 
