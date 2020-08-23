@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [`interrupt_priority`](#interrupt-priority)
+- [`interrupt_priority`](#-interrupt-priority-)
 
 ## `interrupt_priority`
 
