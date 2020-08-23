@@ -1,2 +1,2 @@
 # sketchtests
-An improved collection of self-written Gameboy Test ROMs.
+`sketchtests` is a collection of self-written Gameboy Test ROMs, as a sort of spiritual successor to [my scribbltests](https://github.com/Hacktix/scribbltests), just a little more *clean* and advanced. As I currently only have two Gameboy models available to test on, any help with verifying tests passing/failing on other models is greatly appreciated. If so, please do send me a DM on Discord (Optix™#1337) or create a PR.
