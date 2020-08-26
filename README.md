@@ -8,7 +8,7 @@
 
 ### A Cry for Help
 
-As I currently only have two Gameboy models available to test on, any help with verifying tests passing/failing on other models is greatly appreciated. If so, please do send me a DM on Discord (Optix™#1337) or create a PR.
+As I currently only have two Gameboy models available to test on, any help with verifying tests passing/failing on other models is greatly appreciated. If you're feeling generous and want to help me confirm that these tests pass/fail on other Gameboy models, please do send me a DM on Discord (Optix™#1337) or create a PR.
 
 Also, I'm still relatively new to Gameboy development, so please do let me know if there are any improvements that can be made to the tests - although, keep in mind that the purpose of these tests is to use as little features as possible.
 
