@@ -359,7 +359,7 @@ FontTilesEnd:
 
 section "Strings", rom0
 strTitle:
-    db "daa.gb", 0
+    db "daa.gb\n\n", 0
 strPass:
     db "Test OK!", 0
 strFailExpected:
