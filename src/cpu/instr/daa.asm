@@ -258,6 +258,8 @@ PrintFailSerial:
     pop de
     ld a, [hl]
     call PrintStringA
+    ld a, "\n"
+    ld [rSB], a
     ret
 
 ;-------------------------------------------------------------------------
