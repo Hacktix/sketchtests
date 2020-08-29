@@ -1,5 +1,7 @@
 include "src/inc/hardware.inc"
-
+;-------------------------------------------------------------------------
+; NOTE: This ROM must be assembled with CGB and SGB support
+;       options enabled!
 ;-------------------------------------------------------------------------
 ; # $C000 - Test Result
 ;  - $01 : DMG
