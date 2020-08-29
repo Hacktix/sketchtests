@@ -22,6 +22,8 @@ $06 : AGB/AGS
 
 The test can also be run without a PPU implementation due to a blargg-like "debug output" system. ASCII bytes are written to the SB register (`$FF01`) and can be output on the console. Initially, the ROM also waits for the LY register to reach the VBlank section, however, this does not need to be implemented either, as it times out if VBlank isn't detected in time.
 
+**Disclaimer:** The data tested against is based on [The Cycle-Accurate Game Boy Docs](https://github.com/AntonioND/giibiiadvance/blob/master/docs/TCAGBD.pdf).
+
 ### Requirements:
 
 - Basic CPU Functionality (including `SWAP` and `ADC`)
