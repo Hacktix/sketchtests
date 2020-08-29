@@ -18,7 +18,7 @@ Because why not, honestly:
 
 | Emulator           | Passed Tests |
 | ------------------ | ------------ |
-| BGB                | 2/2 (100%)   |
-| SameBoy            | 2/2 (100%)   |
-| mGBA               | 2/2 (100%)   |
-| Visual Boy Advance | 2/2 (100%)   |
+| BGB                | 3/3 (100%)   |
+| SameBoy            | 3/3 (100%)   |
+| mGBA               | 2/3 (66.6%)  |
+| Visual Boy Advance | 2/3 (66.6%)  |
