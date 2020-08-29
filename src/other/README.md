@@ -1,22 +1,30 @@
-# Interrupts
+# Other
 
 ## Table of Contents
 
-- [interrupt_priority](#interrupt_priority)
+- [model_detector](#model_detector)
 
-## interrupt_priority
+## model_detector
 
-The interrupt_priority test checks the order in which interrupts are serviced by initially writing $FF to both IE and IF registers, then writing the order in which the interrupts are serviced to RAM. Afterwards, the order is checked and errors, if any, are output. If there are no errors, the text "Test OK!" appears.
+The model_detector test executes a thorough check on initial register states in order to determine the Gameboy model the ROM is running on. The initial values of all registers are tested, rather than only the ones that differ between models, in order to guarantee 100% accuracy.
 
-The RAM section `$C000 - $C004` is initialized with the value `$68`, which is not a valid interrupt vector and is interpreted by the ROM as "None". When interrupts are fired, the interrupt handlers should write their vector addresses into RAM in the order in which they are called, meaning that the RAM section `$C000 - $C004` should contain the values `$40, $48, $50, $58, $60` at the end of the test.
+After running the test, an "identifier" value will be written to `$C000`, which is then used to determine the string to display as the detected model, based on the following table:
+
+```
+$00 : Unknown
+$01 : DMG
+$02 : MGB (currently also SGB2)
+$03 : SGB
+$04 : SGB2 (currently unused)
+$05 : CGB
+$06 : AGB/AGS
+```
 
 The test can also be run without a PPU implementation due to a blargg-like "debug output" system. ASCII bytes are written to the SB register (`$FF01`) and can be output on the console. Initially, the ROM also waits for the LY register to reach the VBlank section, however, this does not need to be implemented either, as it times out if VBlank isn't detected in time.
 
 ### Requirements:
 
-- Basic CPU Functionality (including `SWAP`, `ADC` and `LD HL, SP+i8`)
-- Interrupt Handling
-- IF + IE registers
+- Basic CPU Functionality (including `SWAP` and `ADC`)
 
 ### Verified on:
 
@@ -25,11 +33,11 @@ The test can also be run without a PPU implementation due to a blargg-like "debu
 
 ### Screenshots:
 
-#### Test Passed
+#### Test Passed (DMG)
 
-![interrupt_priority_fail](./screenshots/interrupt_priority_pass.png)
+![model_detector_pass](./screenshots/model_detector_pass.png)
 
 #### Test Failed
 
-![interrupt_priority_fail](./screenshots/interrupt_priority_fail.png)
+![model_detector_fail](./screenshots/model_detector_fail.png)
 

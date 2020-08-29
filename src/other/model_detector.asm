@@ -4,13 +4,13 @@ include "src/inc/hardware.inc"
 ;       options enabled!
 ;-------------------------------------------------------------------------
 ; # $C000 - Test Result
+;  - $00 : Unknown Model
 ;  - $01 : DMG
 ;  - $02 : MGB (currently also SGB2)
 ;  - $03 : SGB
 ;  - $04 : SGB2
 ;  - $05 : CGB
 ;  - $06 : AGB/AGS
-;  - $07 : Unknown Model
 ;-------------------------------------------------------------------------
 
 section "Header", rom0[$100]
@@ -144,7 +144,7 @@ EntryPoint:
     jp DisplayResults
 
 .unknownModel
-    ld a, $07
+    ld a, $00
     ld [$c000], a
     jp DisplayResults
 
@@ -186,9 +186,9 @@ DisplayResults:
     ; Load model string pointer
     ld de, strModels
     ld a, [$c000]
-    ld b, a
-    dec b
+    and a
     jr z, .skipModelLoop
+    ld b, a
 .modelLoop
     ld a, 12
     add e
@@ -323,6 +323,8 @@ strTitle:
     db "model_detector\n\n", 0
 strModels:
     ; Include padding so each string is 12 bytes
+    db "Unknown", 0
+    ds 12 - ((@ - strModels) % 12), 0
     db "DMG", 0
     ds 12 - ((@ - strModels) % 12), 0
     db "MGB/SGB2", 0
@@ -334,6 +336,4 @@ strModels:
     db "CGB", 0
     ds 12 - ((@ - strModels) % 12), 0
     db "AGB/AGS", 0
-    ds 12 - ((@ - strModels) % 12), 0
-    db "Unknown", 0
     ds 12 - ((@ - strModels) % 12), 0
